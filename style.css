@@ -507,3 +507,205 @@ footer p strong {
     font-size: 1.2em;
   }
 }
+
+/* --- Hero Section (REDESIGNED LANDING PAGE) --- */
+.lpg-container {
+  width: 90%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+.lpg-hero-section {
+  background-image: linear-gradient(
+    to top,
+    var(--color-dark-primary) 5%,
+    rgba(16, 24, 39, 0.9) 100%
+  );
+  padding: 100px 0 150px 0;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  /* transition: transform 0.1s ease-out; (Remove if you don't use the JS parallax) */
+}
+
+.lpg-hero-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr; /* Text wider than image */
+  gap: 60px;
+  align-items: center;
+}
+
+.lpg-header-content {
+  text-align: left;
+  max-width: 100%;
+}
+
+.lpg-sub-heading {
+  font-size: 1em;
+  color: var(--color-accent-pink);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  font-weight: 800; /* Assuming this from original h2 style */
+}
+
+.lpg-hero-title {
+  font-size: 4.5em;
+  margin: 10px 0 20px 0;
+  line-height: 1.1;
+  color: var(--color-text-light); /* Assuming this from original h1 style */
+  font-weight: 800;
+}
+
+.lpg-hero-intro {
+  font-size: 1.25em;
+  color: var(--color-text-faded);
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+/* CTA Button Styling */
+.lpg-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 40px;
+  border-radius: 50px;
+  font-weight: 700;
+  transition: all 0.3s ease, transform 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  text-decoration: none;
+}
+
+.lpg-primary-cta {
+  background: var(--color-accent-blue);
+  color: var(--color-dark-primary);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+}
+
+.lpg-primary-cta:hover {
+  background: var(--color-text-light);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(0, 240, 255, 0.8);
+}
+
+/* Hero Stats */
+.lpg-hero-stats {
+  display: flex;
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.lpg-hero-stats p {
+  color: var(--color-text-light);
+  font-weight: 600;
+  font-size: 0.9em;
+  opacity: 0.8;
+  margin: 0;
+  position: relative;
+  padding-left: 15px;
+}
+
+.lpg-hero-stats p::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-accent-pink);
+  border-radius: 50%;
+}
+
+/* Hero Visual Column Styling */
+.lpg-hero-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lpg-visual-placeholder {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 1 / 1;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.8);
+  border: 3px solid var(--color-accent-blue);
+}
+
+.lpg-hero-visual-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.lpg-visual-glow {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: inset 0 0 20px 5px rgba(0, 240, 255, 0.5);
+  pointer-events: none;
+  opacity: 0.6;
+  animation: lpg-pulseGlow 4s infinite alternate;
+}
+
+@keyframes lpg-pulseGlow {
+  from {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0.8;
+    transform: scale(1.02);
+  }
+}
+
+/* --- Media Queries for Responsiveness (LPG) --- */
+@media (max-width: 1200px) {
+  .lpg-hero-title {
+    font-size: 3.5em;
+  }
+}
+
+@media (max-width: 992px) {
+  .lpg-hero-layout {
+    grid-template-columns: 1fr; /* Stack columns on tablets/mobiles */
+    gap: 40px;
+  }
+  .lpg-header-content {
+    text-align: center;
+  }
+  .lpg-hero-title {
+    font-size: 3em;
+  }
+  .lpg-hero-stats {
+    justify-content: center;
+  }
+  .lpg-hero-visual {
+    order: -1; /* Move visual to the top on mobile */
+  }
+}
+
+@media (max-width: 600px) {
+  .lpg-hero-title {
+    font-size: 2.2em;
+  }
+  .lpg-hero-intro {
+    font-size: 1.1em;
+  }
+  .lpg-hero-stats {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
