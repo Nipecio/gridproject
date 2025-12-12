@@ -6,7 +6,7 @@
     <title>Great Ideas Project: Healthcare - Right or Commodity?</title>
     <link rel="stylesheet" href="style.css" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link
@@ -16,28 +16,34 @@
   </head>
   <body>
     <nav>
-      <div class="container">
-        <h1 class="logo">The Great Ideas Project</h1>
+      <div class="container nav-content">
+        <h1 class="logo">Health Care</h1>
         <ul class="nav-links">
-          <li><a href="#question">Question</a></li>
-          <li><a href="#argument1">Right</a></li>
-          <li><a href="#argument2">Commodity</a></li>
-          <li><a href="#conclusion">Conclusion</a></li>
+          <li>
+            <a href="#question" data-title="Initiate">The Core Question</a>
+          </li>
+          <li><a href="#argument1" data-title="Ethical">Right</a></li>
+          <li><a href="#argument2" data-title="Economic">Commodity</a></li>
+          <li><a href="#conclusion" data-title="Synthesis">Verdict</a></li>
         </ul>
       </div>
     </nav>
 
-    <header id="question" class="hero-section">
+    <header id="question" class="hero-section" data-parallax>
       <div class="container">
         <div class="header-content">
-          <h2 class="sub-heading">The Fundamental Debate</h2>
-          <h1>Is Healthcare a Fundamental Human Right or a Commodity?</h1>
+          <h2 class="sub-heading">THE ETHICAL CORE OF SOCIETY</h2>
+          <h1 class="hero-title">
+            Is Healthcare a Fundamental Human Right or a Market Commodity?
+          </h1>
           <p class="hero-intro">
-            An exploration of ethical, political, and economic philosophy across
-            time to find a reasoned answer.
+            A deep philosophical and economic exploration, leveraging ancient
+            wisdom and modern theory to dissect one of the most polarizing
+            debates in global policy and personal liberty. We synthesize
+            arguments for equity versus efficiency.
           </p>
-          <a href="#argument1" class="cta-button">
-            <i class="fas fa-arrow-down"></i> Explore the Arguments
+          <a href="#argument1" class="cta-button primary-cta">
+            <i class="fas fa-microscope"></i> Analyze the Theories
           </a>
         </div>
       </div>
@@ -47,165 +53,189 @@
       id="argument1"
       class="argument-section right-argument fade-in-section"
     >
+      <div class="section-image-wrapper">
+        <img
+          src="https://media.istockphoto.com/id/2210069702/photo/female-nurse-operating-mri-scan-machine-at-mri-scanner-room.webp?a=1&b=1&s=612x612&w=0&k=20&c=SgN8Cnae3BgEFRlUQbEzd1kR1orTlNrbM3DTvz2HB1g="
+          alt="Abstract image representing human rights and compassion"
+          class="section-intro-image"
+        />
+      </div>
       <div class="container">
-        <h2 class="section-title">
-          <i class="fas fa-fist-raised icon-right"></i> Argument 1: Healthcare
-          as a Fundamental Right
-        </h2>
-        <p class="section-intro">
-          This perspective grounds healthcare access in moral obligation, social
-          justice, and the necessity for human flourishing (Eudaimonia).
-        </p>
+        <div class="section-header">
+          <h2 class="section-title">
+            <i class="fas fa-shield-alt"></i> Argument 1: Healthcare as a
+            Universal Right
+          </h2>
+          <p class="section-intro">
+            This perspective is rooted in moral philosophy and the concept of
+            distributive justice. It posits that access to care is an essential
+            precondition for a life worth living, arguing that health equity is
+            a societal prerequisite, not a consumer benefit.
+          </p>
+        </div>
 
         <div class="sources-grid">
-          <div class="source-card">
+          <div class="source-card card-right" data-tilt>
             <div class="card-icon-group">
-              <i class="fas fa-balance-scale icon-card right-color"></i>
-              <h4>John Rawls: The Veil of Ignorance</h4>
+              <i class="fas fa-balance-scale icon-card"></i>
+              <h4>Rawls: The Veil of Ignorance</h4>
             </div>
             <p>
-              <strong>Core Idea:</strong> Justice requires unbiased
-              decision-making. Behind the Veil, a rational government would
-              choose free healthcare as the "safest" option, benefiting the
-              average person and ensuring basic well-being is not left to
-              chance.
+              Core Idea: Under conditions of perfect fairness (the Veil), any
+              rational, self-interested individual would mandate universal, free
+              healthcare. This is the Maximin Principle—maximizing the minimum
+              well-being—ensuring that poverty or circumstance does not dictate
+              survival.
             </p>
           </div>
 
-          <div class="source-card">
+          <div class="source-card card-right" data-tilt>
             <div class="card-icon-group">
-              <i class="fas fa-hand-holding-medical icon-card right-color"></i>
-              <h4>Amartya Sen: Development as Freedom</h4>
+              <i class="fas fa-hand-holding-heart icon-card"></i>
+              <h4>Sen: Development as Freedom</h4>
             </div>
             <p>
-              <strong>Core Idea:</strong> Health is a core "human capability."
-              Restricted access is a severe limit on freedom, preventing
-              individuals from functioning fully and contributing to society.
-              Healthcare, therefore, is an essential prerequisite for a full and
-              meaningful life.
+              Core Idea: Health is a foundational human capability—the freedom
+              to achieve certain 'functionings.' Illness is a fundamental
+              unfreedom. State provision of health unlocks the potential for
+              citizens to participate meaningfully in civic and economic life.
             </p>
           </div>
 
-          <div class="source-card">
+          <div class="source-card card-right" data-tilt>
             <div class="card-icon-group">
-              <i class="fas fa-heartbeat icon-card right-color"></i>
-              <h4>Aristotle: Nicomachean Ethics</h4>
+              <i class="fas fa-brain icon-card"></i>
+              <h4>Aristotle: Eudaimonia & Justice</h4>
             </div>
             <p>
-              <strong>Core Idea:</strong> Distributive justice requires goods
-              essential for survival (like health, key to reaching Eudaimonia)
-              to be distributed based on <strong>need</strong>, not merit,
-              rejecting the idea of healthcare as a purchasable commodity.
-            </p>
-          </div>
-
-          <div class="source-card">
-            <div class="card-icon-group">
-              <i class="fas fa-gavel icon-card right-color"></i>
-              <h4>John Locke: Second Treatise of Government</h4>
-            </div>
-            <p>
-              <strong>Core Idea:</strong> Governments require "tacit consent."
-              To legitimize its rule and attract people, a government must
-              provide benefits that secure life and happiness, making free
-              healthcare a major "pull factor" for implicit citizen consent.
-            </p>
-          </div>
-
-          <div class="source-card">
-            <div class="card-icon-group">
-              <i class="fas fa-user-shield icon-card right-color"></i>
-              <h4>Anita Pereira: Live and Let Live</h4>
-            </div>
-            <p>
-              <strong>Core Idea:</strong> The absence of universal healthcare is
-              a societal negative. Treating life-saving care as a privilege
-              leads to suffering and plagues the future population with
-              avoidable sickness. All people should be entitled to health.
+              Core Idea: A full human life (Eudaimonia) is the goal, and
+              physical health is a necessary prerequisite. Distributive justice
+              demands essential goods be distributed based on need, not merit,
+              wealth, or social status. Health must be prioritized over profit.
             </p>
           </div>
         </div>
+
+        <p class="section-summary right-summary">
+          <i class="fas fa-long-arrow-alt-right"></i> Synthesis: The Right
+          argument is an appeal to humanity. It treats disease and injury as
+          forms of unavoidable bad luck, which a cohesive society has a moral
+          obligation to mitigate for all members, securing the dignity of the
+          individual.
+        </p>
       </div>
     </section>
 
     <section
       id="argument2"
       class="argument-section commodity-argument fade-in-section"
+      data-parallax
     >
+      <div class="section-image-wrapper">
+        <img
+          src="https://media.istockphoto.com/id/1305427081/photo/blue-abstract-backgrounds.webp?a=1&b=1&s=612x612&w=0&k=20&c=VjBhEm0SHqmP80AYA6Gw2mC1MaixIjsNSSkNm-HZtFA="
+          alt="Abstract image representing human rights and compassion"
+          class="section-intro-image"
+        />
+      </div>
       <div class="container">
-        <h2 class="section-title">
-          <i class="fas fa-money-bill-wave icon-commodity"></i> Argument 2:
-          Healthcare as a Commodity
-        </h2>
-        <p class="section-intro">
-          This viewpoint emphasizes the role of the free market, economic
-          efficiency, and individual liberty, viewing government interference as
-          restrictive.
-        </p>
+        <div class="section-header">
+          <h2 class="section-title">
+            <i class="fas fa-chart-line"></i> Argument 2: Healthcare as an
+            Economic Commodity
+          </h2>
+          <p class="section-intro">
+            This viewpoint is grounded in free-market economics and libertarian
+            thought. It stresses the principles of individual liberty, economic
+            efficiency, and the dangers of central planning, arguing that market
+            forces optimize quality and manage supply effectively.
+          </p>
+        </div>
 
         <div class="sources-grid single-source-grid">
-          <div class="source-card wide-card">
+          <div class="source-card wide-card card-commodity" data-tilt>
             <div class="card-icon-group">
-              <i class="fas fa-chart-line icon-card commodity-color"></i>
-              <h4>Friedrich Hayek: The Road to Serfdom</h4>
+              <i class="fas fa-road icon-card"></i>
+              <h4>Hayek: The Road to Serfdom</h4>
             </div>
             <p>
-              <strong>Core Idea:</strong> Government attempts to guarantee
-              things like healthcare restrict individual
-              <strong>freedoms</strong> and distort the
-              <strong>economy</strong>. If healthcare is given freely as a
-              right, it is a step towards undue government interference. Hayek
-              advocates for markets to determine access, implying healthcare is
-              a commodity, regardless of individual necessity.
+              Core Idea: Guaranteeing healthcare as a right is a form of
+              coercive central planning that restricts personal economic freedom
+              and distorts market signals (supply/demand). Government
+              interference creates inefficiency, bureaucracy, and misallocation
+              of scarce medical resources.
+            </p>
+          </div>
+
+          <div class="source-card wide-card card-commodity" data-tilt>
+            <div class="card-icon-group">
+              <i class="fas fa-user-tag icon-card"></i>
+              <h4>Milton Friedman: The Price Mechanism</h4>
+            </div>
+            <p>
+              Core Idea: Treating healthcare like any other service—purchased in
+              a competitive market—incentivizes innovation, controls costs
+              through competition, and respects the productive efforts of
+              physicians and researchers, who are motivated by profit, not state
+              directive.
             </p>
           </div>
         </div>
+
+        <p class="section-summary commodity-summary">
+          <i class="fas fa-long-arrow-alt-right"></i> Synthesis: The Commodity
+          argument is an appeal to efficiency. It focuses on the practical
+          scarcity of resources (time, specialized knowledge, expensive
+          equipment) and relies on market competition to drive down prices and
+          push innovation faster than a centralized government system.
+        </p>
       </div>
     </section>
 
     <section id="conclusion" class="conclusion-section fade-in-section">
       <div class="container">
-        <h2 class="section-title">Our Conclusion: Ethics vs. Practicality</h2>
+        <h2 class="section-title">
+          <i class="fas fa-check-double"></i> Synthesis: The Verdict on Ethics
+          vs. Logistics
+        </h2>
         <div class="conclusion-box">
-          <p>
-            <strong>The Final Answer:</strong> Reviewing these perspectives, the
-            issue of healthcare touches upon questions of freedom, fairness, and
-            responsibility. Aristotle and Sen argue that access to healthcare
-            supports “human flourishing,” while Rawls and Locke emphasize moral
-            obligations of the government. Hayek and Pereira challenge these
-            ideas, pointing out consequences and problems that come from free
-            healthcare.
+          <p class="conclusion-intro">
+            The debate is not merely philosophical; it is an argument over
+            logistics and societal models. The moral imperative to save lives
+            clashes directly with the reality of finite resources and the
+            economic imperative of innovation.
           </p>
           <p class="key-takeaway">
-            The answer hangs between what is ethical and what is practical. In a
-            perfect world, everyone would have equal access to healthcare.
-            However, in reality, defining and structuring a society for fair
-            "equal access" is nearly impossible. The overwhelming support from
-            the moral and ethical perspectives (Rawls, Sen, Aristotle) suggests
-            that the **ideal leans strongly toward Healthcare as a Right**, but
-            Hayek’s perspective reminds us that the practical implementation
-            must respect economic realities and individual liberty.
+            The philosophical foundation for Healthcare as a Right is
+            overwhelming (Rawls, Sen, Aristotle). Our ethical consensus,
+            especially regarding basic life-saving procedures, demands equity.
+            However, the Hayekian perspective provides a crucial check: The
+            system designed to deliver the right must be economically viable,
+            efficient, and respect the liberty of providers.
           </p>
+          <div class="final-statement">
+            The modern answer is a Hybrid Model: Basic, life-saving care is a
+            guaranteed right, paid for by the collective. Discretionary or
+            cosmetic procedures remain commodities, subject to market forces.
+            This attempts to satisfy both moral duty and economic reality.
+          </div>
         </div>
-        <a href="#question" class="cta-button secondary-button">
-          <i class="fas fa-redo"></i> Revisit the Question
+        <a href="#question" class="cta-button secondary-cta">
+          <i class="fas fa-level-up-alt"></i> Return to the Core Question
         </a>
       </div>
     </section>
 
     <footer>
-      <div class="container">
+      <div class="container footer-content">
         <p>
-          &copy; 2025 Great Ideas Final Project | Sohum Jain, Finn Edwards, Anay
-          Sura
+          &copy; 2025 Great Ideas Final Project | Website Design | By Anay Sura,
+          Sohum Jain, and Finn Edwards
         </p>
-        <div class="social-icons">
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-linkedin-in"></i></a>
-        </div>
       </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

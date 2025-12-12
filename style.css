@@ -1,14 +1,14 @@
-/* --- Modern Color Palette & Typography --- */
+/* --- Modern Dark Palette & Typography --- */
 :root {
-  --color-primary: #1d2a4d; /* Deep Indigo/Navy */
-  --color-accent: #00c4b4; /* Vibrant Teal */
-  --color-secondary: #ff8c42; /* Complementary Orange/Peach */
-  --color-light: #f4f7f9; /* Off-White Background */
-  --color-text-dark: #333333;
-  --color-text-light: #ffffff;
-  --font-primary: "Poppins", sans-serif;
-  --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.08);
-  --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
+  --color-dark-primary: #101827; /* Deep Navy/Black */
+  --color-dark-secondary: #1c273c; /* Slightly Lighter Dark for background */
+  --color-accent-blue: #00f0ff; /* Electric Teal/Cyan */
+  --color-accent-pink: #ff0080; /* Neon Pink/Magenta */
+  --color-text-light: #e0e7ff;
+  --color-text-faded: #9ca3af;
+  --font-primary: "Inter", sans-serif;
+  --shadow-elevated: 0 10px 30px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 15px rgba(0, 240, 255, 0.4);
 }
 
 /* General Styling & Reset */
@@ -20,64 +20,70 @@
 
 body {
   font-family: var(--font-primary);
-  line-height: 1.65;
-  color: var(--color-text-dark);
-  background-color: var(--color-light);
-  overflow-x: hidden; /* Prevents horizontal scroll from transitions */
+  line-height: 1.7;
+  color: var(--color-text-light);
+  background-color: var(--color-dark-primary);
+  overflow-x: hidden;
 }
 
 .container {
   width: 90%;
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 20px 0;
+  padding: 30px 0;
 }
 
 h1,
 h2,
-h3,
 h4 {
-  margin-bottom: 15px;
-  line-height: 1.2;
-  color: var(--color-primary);
-  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.15;
+  color: var(--color-text-light);
+  font-weight: 800;
 }
 
 p {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  color: var(--color-text-faded);
 }
 
 a {
   text-decoration: none;
-  color: var(--color-accent);
+  color: var(--color-accent-blue);
   transition: color 0.3s ease;
 }
 
-a:hover {
-  color: var(--color-secondary);
+strong {
+  color: var(--color-text-light);
 }
 
 /* --- Navigation Bar --- */
 nav {
-  background-color: var(--color-text-light);
-  border-bottom: 1px solid #e0e0e0;
+  background-color: rgba(28, 39, 60, 0.8); /* Semi-transparent dark */
+  backdrop-filter: blur(8px); /* Glassmorphism effect */
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow-elevated);
+  border-bottom: 1px solid rgba(0, 240, 255, 0.2);
 }
 
-nav .container {
+.nav-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 0;
+  padding: 18px 0;
 }
 
 nav .logo {
-  font-size: 1.6em;
+  font-size: 1.8em;
   font-weight: 700;
-  color: var(--color-primary);
+  color: var(--color-accent-blue);
+  margin-top: 10px;
+}
+
+nav .logo strong {
+  color: var(--color-text-light);
 }
 
 .nav-links {
@@ -86,278 +92,348 @@ nav .logo {
 }
 
 .nav-links li {
-  margin-left: 35px;
+  margin-left: 40px;
 }
 
 .nav-links a {
-  color: var(--color-text-dark);
+  color: var(--color-text-faded);
   font-weight: 600;
-  padding: 5px 0;
   position: relative;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--color-accent-blue);
 }
 
 .nav-links a::after {
-  content: "";
+  content: attr(
+    data-title
+  ); /* Use the data-title attribute for the shadow text */
   position: absolute;
-  width: 0;
-  height: 3px;
-  display: block;
-  margin-top: 5px;
-  background: var(--color-accent);
-  transition: width 0.3s ease;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.7em;
+  font-weight: 400;
+  color: transparent;
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0); /* Initial hidden glow */
+  transition: text-shadow 0.3s ease;
 }
 
 .nav-links a:hover::after {
-  width: 100%;
+  color: var(--color-accent-blue);
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.6); /* Stronger glow on hover */
 }
 
-/* --- Header/Hero Section --- */
+/* --- Hero Section --- */
 .hero-section {
-  background: linear-gradient(rgba(29, 42, 77, 0.8), rgba(29, 42, 77, 0.8)),
-    url("https://picsum.photos/seed/healthcare/1600/700") no-repeat center
-      center/cover;
+  background: linear-gradient(rgba(16, 24, 39, 0.9), rgba(16, 24, 39, 0.9)),
+    url("https://source.unsplash.com/featured/?futuristic,data,health")
+      no-repeat center center/cover;
   color: var(--color-text-light);
   text-align: center;
-  padding: 120px 0;
-  min-height: 85vh;
+  padding: 150px 0;
+  min-height: 90vh;
   display: flex;
   align-items: center;
-}
-
-.header-content {
-  max-width: 900px;
-  margin: 0 auto;
+  transition: transform 0.1s ease-out; /* For parallax effect in JS */
 }
 
 .sub-heading {
-  font-size: 1.2em;
-  color: var(--color-accent);
-  letter-spacing: 2px;
+  font-size: 1.1em;
+  color: var(--color-accent-pink);
+  letter-spacing: 3px;
   text-transform: uppercase;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
-.header-content h1 {
-  font-size: 4em;
-  margin: 10px 0 20px 0;
-  color: var(--color-text-light);
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+.hero-title {
+  font-size: 5em;
+  margin: 10px 0 25px 0;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.hero-title strong {
+  color: var(--color-accent-blue);
 }
 
 .hero-intro {
-  font-size: 1.25em;
-  color: #c4d0e6;
-  margin-bottom: 30px;
+  font-size: 1.4em;
+  color: var(--color-text-light);
+  max-width: 900px;
+  margin: 0 auto 40px auto;
 }
 
 .cta-button {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  background-color: var(--color-accent);
-  color: var(--color-primary);
-  padding: 14px 35px;
+  gap: 12px;
+  padding: 16px 40px;
   border-radius: 50px;
   font-weight: 700;
-  transition: background-color 0.3s ease, transform 0.2s ease,
-    box-shadow 0.3s ease;
+  transition: all 0.3s ease, transform 0.2s ease;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  box-shadow: 0 4px 10px rgba(0, 196, 180, 0.4);
+  letter-spacing: 1px;
+  box-shadow: var(--shadow-glow);
+  border: none;
 }
 
-.cta-button:hover {
-  background-color: #00e0cf;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0, 196, 180, 0.6);
+.primary-cta {
+  background: var(--color-accent-blue);
+  color: var(--color-dark-primary);
 }
 
-.secondary-button {
-  background-color: var(--color-secondary);
+.primary-cta:hover {
+  background: var(--color-text-light);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 30px rgba(0, 240, 255, 0.6);
+}
+
+.secondary-cta {
+  background: var(--color-accent-pink);
   color: var(--color-text-light);
-  box-shadow: 0 4px 10px rgba(255, 140, 66, 0.4);
+  box-shadow: 0 0 15px rgba(255, 0, 128, 0.4);
 }
 
-.secondary-button:hover {
-  background-color: #ff9d59;
-  box-shadow: 0 6px 15px rgba(255, 140, 66, 0.6);
+.secondary-cta:hover {
+  background: #ff2699;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 30px rgba(255, 0, 128, 0.6);
 }
 
 /* --- Argument Sections --- */
 .argument-section {
-  padding: 80px 0;
+  padding: 100px 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
 }
 
 .section-title {
-  font-size: 2.5em;
+  font-size: 3em;
   text-align: center;
   margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  color: var(--color-accent-blue);
 }
 
 .section-title i {
   margin-right: 15px;
-  font-size: 1.2em;
+  font-size: 1.1em;
+}
+
+.section-title strong {
+  color: var(--color-accent-pink);
 }
 
 .section-intro {
-  font-style: italic;
-  font-size: 1.15em;
+  font-size: 1.25em;
   text-align: center;
-  margin: 0 auto 50px auto;
-  color: #6a6e7c;
-  max-width: 800px;
+  margin: 0 auto;
+  color: var(--color-text-faded);
+  max-width: 900px;
+  font-weight: 300;
 }
 
 .right-argument {
-  background-color: #eaf8f7; /* Light accent for 'Right' */
+  background-color: var(--color-dark-secondary);
 }
 
 .commodity-argument {
-  background-color: var(--color-light); /* Off-white for 'Commodity' */
+  background: linear-gradient(rgba(16, 24, 39, 0.9), rgba(16, 24, 39, 0.9)),
+    url("https://source.unsplash.com/featured/?finance,economy,abstract")
+      no-repeat fixed center center/cover;
+  border-top: 1px solid rgba(255, 0, 128, 0.2);
+  border-bottom: 1px solid rgba(255, 0, 128, 0.2);
 }
 
-.icon-right {
-  color: var(--color-accent);
-}
-.icon-commodity {
-  color: var(--color-secondary);
-}
-
-/* --- Source Cards --- */
+/* --- Source Cards (Glassmorphism & Tilt Effect) --- */
 .sources-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 30px;
+  gap: 40px;
 }
 
 .source-card {
-  background-color: var(--color-text-light);
   padding: 30px;
-  border-radius: 12px;
-  box-shadow: var(--shadow-light);
-  text-align: left;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-top: 5px solid var(--color-primary);
-  height: 100%; /* Ensure equal height in the grid */
+  border-radius: 16px;
+  background: rgba(
+    255,
+    255,
+    255,
+    0.05
+  ); /* Very light, transparent background */
+  backdrop-filter: blur(10px); /* The Glassmorphism effect */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow-elevated);
+  transition: border-color 0.3s ease;
+  height: 100%;
 }
 
 .source-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-hover);
+  border-color: rgba(0, 240, 255, 0.4);
+}
+
+.card-right {
+  border-left: 5px solid var(--color-accent-blue);
+}
+
+.card-commodity {
+  border-left: 5px solid var(--color-accent-pink);
 }
 
 .card-icon-group {
   display: flex;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .icon-card {
-  font-size: 1.8em;
+  font-size: 2em;
   margin-right: 15px;
 }
 
+.card-right .icon-card {
+  color: var(--color-accent-blue);
+}
+
+.card-commodity .icon-card {
+  color: var(--color-accent-pink);
+}
+
 .source-card h4 {
-  font-size: 1.35em;
+  font-size: 1.4em;
   margin: 0;
-  color: var(--color-primary);
 }
 
 .source-card p strong {
   font-weight: 700;
-  color: var(--color-accent);
+  color: var(--color-accent-blue);
 }
 
-/* Specific styling for Argument 2's single card to center it nicely */
+.card-commodity p strong {
+  color: var(--color-accent-pink);
+}
+
+.section-summary {
+  text-align: center;
+  font-size: 1.1em;
+  margin-top: 50px;
+  padding: 20px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.right-summary {
+  color: var(--color-accent-blue);
+  background: rgba(0, 240, 255, 0.1);
+}
+
+.commodity-summary {
+  color: var(--color-accent-pink);
+  background: rgba(255, 0, 128, 0.1);
+}
+
+/* Specific styling for Argument 2 grid */
 .single-source-grid {
-  display: flex;
-  justify-content: center;
-}
-
-.wide-card {
-  max-width: 600px;
-  border-top-color: var(--color-secondary);
-}
-
-.commodity-color {
-  color: var(--color-secondary);
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
 }
 
 /* --- Conclusion Section --- */
 .conclusion-section {
-  padding: 100px 0;
-  background-color: var(--color-primary);
-  color: var(--color-text-light);
+  padding: 120px 0;
+  background-color: var(--color-dark-primary);
   text-align: center;
 }
 
 .conclusion-section .section-title {
-  color: var(--color-accent);
-  margin-bottom: 50px;
+  color: var(--color-text-light);
+  margin-bottom: 60px;
+}
+
+.conclusion-section .section-title i {
+  color: var(--color-accent-pink);
 }
 
 .conclusion-box {
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
+  max-width: 1000px;
+  margin: 0 auto 50px auto;
   padding: 40px;
-  margin: 0 auto 40px auto;
-  max-width: 900px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+  background: linear-gradient(
+    45deg,
+    var(--color-dark-secondary),
+    var(--color-dark-primary)
+  );
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.7);
+  border: 2px solid var(--color-accent-blue);
 }
 
-.conclusion-box p {
-  font-size: 1.1em;
-  text-align: left;
+.conclusion-intro {
+  font-size: 1.3em;
+  font-weight: 300;
+  color: var(--color-text-faded);
 }
 
 .key-takeaway {
-  margin-top: 30px;
-  padding-top: 20px;
-  border-top: 1px dashed rgba(255, 255, 255, 0.3);
+  margin: 30px 0;
+  padding: 20px 0;
+  border-top: 1px dashed rgba(255, 255, 255, 0.2);
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+  font-size: 1.5em;
+  line-height: 1.4;
   font-weight: 600;
-  font-size: 1.25em;
-  line-height: 1.5;
+  color: var(--color-text-light);
 }
 
 .key-takeaway strong {
-  color: var(--color-accent);
+  color: var(--color-accent-pink);
+}
+
+.final-statement {
+  font-size: 1.1em;
+  color: var(--color-accent-blue);
+  font-weight: 700;
 }
 
 /* --- Footer --- */
 footer {
-  background-color: var(--color-text-dark);
-  color: var(--color-light);
-  text-align: center;
-  padding: 25px 0;
+  background-color: #0d141f; /* Even darker base */
+  color: var(--color-text-faded);
+  padding: 30px 0;
   font-size: 0.9em;
-  border-top: 5px solid var(--color-secondary);
 }
 
-footer .container {
+.footer-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+footer p strong {
+  color: var(--color-accent-pink);
+}
+
 .social-icons a {
-  color: var(--color-light);
-  font-size: 1.5em;
-  margin-left: 15px;
-  transition: color 0.3s ease;
+  color: var(--color-text-faded);
+  font-size: 1.6em;
+  margin-left: 20px;
 }
 
 .social-icons a:hover {
-  color: var(--color-accent);
+  color: var(--color-accent-blue);
+  transform: scale(1.1);
 }
 
-/* --- JS Fade-in Animation Classes --- */
+/* --- JS/Animation Classes --- */
 .fade-in-section {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transform: translateY(40px);
+  transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .is-visible {
@@ -365,57 +441,69 @@ footer .container {
   transform: translateY(0);
 }
 
+/* --- Section Image Wrapper --- */
+.section-image-wrapper {
+  text-align: center;
+}
+
+.section-intro-image {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
 /* --- Media Queries for Responsiveness --- */
-@media (max-width: 992px) {
-  .header-content h1 {
-    font-size: 3em;
-  }
-  .nav-links li {
-    margin-left: 20px;
-  }
-  .sources-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+@media (max-width: 1200px) {
+  .hero-title {
+    font-size: 4em;
   }
 }
 
-@media (max-width: 768px) {
-  nav .container {
+@media (max-width: 992px) {
+  .nav-content {
     flex-direction: column;
     text-align: center;
   }
   .nav-links {
-    margin-top: 10px;
+    margin-top: 15px;
     flex-wrap: wrap;
     justify-content: center;
   }
   .nav-links li {
-    margin: 5px 10px;
+    margin: 5px 15px;
   }
-  .hero-section {
-    min-height: 60vh;
-    padding: 80px 0;
+  .hero-title {
+    font-size: 3.5em;
   }
-  .header-content h1 {
+  .section-title {
     font-size: 2.5em;
+  }
+  .sources-grid,
+  .single-source-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: 2.5em;
+  }
+  .hero-intro {
+    font-size: 1.1em;
   }
   .section-title {
     font-size: 2em;
   }
-  footer .container {
-    flex-direction: column;
-    gap: 15px;
-  }
-}
-
-@media (max-width: 480px) {
-  .header-content h1 {
-    font-size: 2em;
-  }
   .cta-button {
-    padding: 12px 25px;
-    font-size: 0.9em;
+    padding: 14px 30px;
   }
-  .source-card {
-    padding: 20px;
+  .key-takeaway {
+    font-size: 1.2em;
   }
 }
