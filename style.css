@@ -709,3 +709,65 @@ footer p strong {
     gap: 15px;
   }
 }
+
+/* --- Custom Works Cited Styling --- */
+
+/* Adjust the padding for the works cited page */
+.works-cited-section {
+  padding: 80px 0;
+  min-height: 100vh; /* Ensure it takes up at least the full screen height */
+}
+
+/* Styling for the section title */
+.works-cited-header {
+  font-size: 3.5em;
+  font-weight: 900;
+  margin-bottom: 40px;
+  text-align: center;
+  color: var(--color-accent-blue);
+  text-shadow: 0 0 15px rgba(0, 240, 255, 0.6);
+}
+
+.works-cited-list {
+  list-style: none; /* Remove default bullets */
+  padding-left: 0;
+}
+
+.works-cited-item {
+  margin-bottom: 25px; /* Spacing between entries */
+  padding-bottom: 5px;
+  border-bottom: 1px dashed rgba(224, 231, 255, 0.1); /* Subtle separator */
+}
+
+/* The key for Works Cited: Creating a Hanging Indent */
+.works-cited-item p {
+  text-indent: -40px; /* Pull the first line left */
+  margin-left: 40px; /* Push the rest of the lines right */
+  margin-bottom: 0; /* Remove extra space below the paragraph */
+  line-height: 1.8; /* Make it easy to read with a lot of line spacing */
+  color: var(--color-text-light); /* Use a lighter color for the main text */
+}
+
+.works-cited-item a {
+  /* Use the bold/strong styling for hyperlinks in the entry */
+  font-weight: 600;
+  text-shadow: var(--shadow-glow);
+}
+
+.works-cited-item p em {
+  color: var(--color-accent-pink); /* Highlight titles */
+  font-style: normal; /* Often works better with modern fonts */
+  font-weight: 500;
+}
+
+.works-cited-item p strong {
+  /* Highlight key elements like the author or date */
+  color: var(--color-accent-blue);
+}
+
+@media (max-width: 600px) {
+  .works-cited-item p {
+    text-indent: -20px;
+    margin-left: 20px;
+  }
+}
